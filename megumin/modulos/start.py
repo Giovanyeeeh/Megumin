@@ -19,7 +19,7 @@ Este megux ainda esta em desenvolvimento.</i>
 """
 
 
-@megux.on_message(filters.command("start"))
+@megux.on_message(filters.command("alive"))
 async def start_(_, message: Message):
     if message.chat.type == "private":
         keyboard = InlineKeyboardMarkup(
@@ -31,13 +31,13 @@ async def start_(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="✨ Me adicione a um grupo",
+                        text="✨ Funfando",
                         url=f"https://t.me/meguxtestbot?startgroup=new",
                     ),
                 ],
             ]
         )
-        gif = "https://telegra.ph/file/64f9d0c8e4e56a58a7949.gif"
+        gif = "https://telegra.ph/file/2e070453d817ffb4a151f.gif"
         msg = START_PRIVADO
         await message.reply_animation(gif, caption=msg, reply_markup=keyboard)
     else:
